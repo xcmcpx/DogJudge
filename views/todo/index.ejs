@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CPatrick Portfolio</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+        <link rel="stylesheet" type ="text/css" href="/stylesheets/todo.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href"/">CP Programs</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <%if(!currentUser){ %>
+                    <!--eventually landing page will be a subsection of the home menu -->
+                    <li class="navelem"><a href="/">Landing Page</a></li>
+                    <li class="navelem"><a href="/home">Home</a></li>
+                    <li class="navelem"><a href="/dogs">Dog Gallery</a></li>
+                    <li class="navelem"><a href="/register">Sign Up</a></li>
+                    <li class="navelem"><a href="/login">Login</a></li>
+                    
+                    <% }
+                    else{ %>
+                    <li class="navelem">Signed In As <%= currentUser.username %></li>
+                    <!--eventually landing page will be a subsection of the home menu -->
+                    <li class="navelem"><a href="/">Landing Page</a></li>
+                    <li class="navelem"><a href="/home">Home</a></li>
+                    <li class="navelem"><a href="/dogs">Dog Gallery</a></li>
+                    <li class="navelem"><a href="/blogs">Blog Posts</a></li>
+                    <li class="navelem"><a href="/logout">Logout</a></li>
+                   <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <% if(error && error.length > 0) { %>
+        <div class="alert alert-danger" role="alert">
+            <%= error %>
+        </div>
+    <% } %>
+    <% if(success && success.length > 0) { %>
+        <div class="alert alert-success" role="alert">
+            <%= success %>
+        </div>
+        <% } %>
+    </div>
+    <div class="container main">
+        <div class="todocontainer">
+        <h1>To-Do List<a href="/todo/new"><i class="fa fa-plus"></i></a></h1>
+        <input type="text" value ="Add new To-Do list item">
+        <ul>
+            <%todos.forEach(function(todo) {%>
+             <li class="todoelem"><span><i class="fas fa-ban"></i></span><%=todo.title%><a href="/todo/<%=todo._id%>"><i class="far fa-edit"></i></a></li>
+            <% }) %>
+        </ul>
+    
+
+
+
+    </div>
+
+
+
+
+
+
+<% include ../partials/todofooter %>

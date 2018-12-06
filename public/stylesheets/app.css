@@ -1,0 +1,64 @@
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+}
+i.icon {
+    font-size:2em;
+}
+.container.main{
+    min-height: 100%;
+}
+.container{
+    min-height: 0;
+}
+.ui.main.text.container.segment{
+    margin-bottom: 7.0em;
+}
+
+#delete{
+    display: inline;
+}
+.ui.huge.header{
+    padding-top:50px;
+}
+img.media-object{
+    height:200px;
+}
+.footer {
+    position: relative;
+    bottom: 0px;
+    right:0px;
+    left:0px;
+    width: 100%;
+    color: black;
+    text-align: center;
+    background-color:#F8F8F8;
+    min-height: 50px;
+    border: 1px solid;
+    border-color:#E7E7E7;
+    border-radius: 4px;
+    padding-top: 15px;
+    margin-top:15px;
+}
+.media{
+    margin:50px 20px 50px 20px;
+}
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+.dogname{
+    color: green;
+}
+.delete-form{
+    display:inline;
+}
